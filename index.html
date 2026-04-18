@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Service Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Smart Service Booking</h1>
+
+    <!-- SECTION 1: User Selection -->
+    <div class="card" id="selection-section">
+      <h2>Select a Service</h2>
+
+      <div class="form-group">
+        <label for="city-selector">City</label>
+        <select id="city-selector">
+          <option value="">-- Select City --</option>
+          <!-- JS will fill this -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="service-select">Service</label>
+        <select id="service-select" disabled>
+          <option value="">-- Select Service --</option>
+          <!-- JS will fill this -->
+        </select>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Providers -->
+    <div class="card" id="providers-section">
+      <h2>Available Providers</h2>
+      <div id="providers-list">
+        <p class="placeholder">Select a city and service to see providers.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Booking -->
+    <div class="card" id="booking-section">
+      <h2>Book a Provider</h2>
+      <p id="selected-provider-display">No provider selected.</p>
+      <button id="book-btn" disabled>Book Now</button>
+      <div id="status-message"></div>
+      <div id="booking-summary"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

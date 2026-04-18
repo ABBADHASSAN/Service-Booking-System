@@ -1,0 +1,61 @@
+{
+  "cities": [
+    {
+      "name": "Lahore",
+      "services": [
+        {
+          "name": "Electrician",
+          "providers": [
+            { "name": "Ali Raza", "rating": 4.8 },
+            { "name": "Usman Khan", "rating": 4.5 }
+          ]
+        },
+        {
+          "name": "Plumber",
+          "providers": [
+            { "name": "Bilal Shah", "rating": 4.2 },
+            { "name": "Tariq Mehmood", "rating": 4.6 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Karachi",
+      "services": [
+        {
+          "name": "Electrician",
+          "providers": [
+            { "name": "Hamza Siddiqui", "rating": 4.7 },
+            { "name": "Fahad Mirza", "rating": 4.3 }
+          ]
+        },
+        {
+          "name": "Cleaner",
+          "providers": [
+            { "name": "Zara Hussain", "rating": 4.9 },
+            { "name": "Nadia Alam", "rating": 4.1 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Islamabad",
+      "services": [
+        {
+          "name": "Plumber",
+          "providers": [
+            { "name": "Kamran Baig", "rating": 4.4 },
+            { "name": "Salman Iqbal", "rating": 4.6 }
+          ]
+        },
+        {
+          "name": "Cleaner",
+          "providers": [
+            { "name": "Ayesha Malik", "rating": 4.8 },
+            { "name": "Sana Qureshi", "rating": 4.5 }
+          ]
+        }
+      ]
+    }
+  ]
+}
