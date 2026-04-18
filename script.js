@@ -1,6 +1,7 @@
 // waits until whole page loads
 document.addEventListener('DOMContentLoaded', function() {
   loadData();
+  document.getElementById('book-btn').addEventListener('click', bookService);
 });
 
 // fetch data from json
@@ -101,6 +102,69 @@ function populateProviders(providers){
 
 }
 
+
+function checkAvailability() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      const random = Math.random();
+      if (random > 0.3) {
+        resolve("Provider is available");
+      } else {
+        reject("Provider is unavailable");
+      }
+    }, 1500);
+  });
+}
+
+function processBooking() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve("Booking processed");
+    }, 1000);
+  });
+}
+
+function sendConfirmation() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve("Confirmation sent");
+    }, 1000);
+  });
+}
+
+
+
+async function bookService(){
+    const status = document.getElementById('status-message');
+    const bookBtn = document.getElementById('book-btn');
+    try{
+        bookBtn.disabled = true;
+        status.textContent = "Checking provider availability...";
+        await checkAvailability();
+        status.textContent = "Provider is available";
+        status.className = 'status-processing';
+        await processBooking();
+        status.textContent = "Booking processed";
+        status.className = 'status-processing';
+        await sendConfirmation();
+        status.textContent = "Confirmation sent";
+        status.className = 'status-success';
+
+        // adding summary after booking success
+        const summary = document.getElementById('booking-summary');
+        summary.style.display = 'block';
+        summary.innerHTML = `<h3>Booking Summary</h3>
+        <p><strong>City:</strong> ${document.getElementById('city-selector').value}</p>
+        <p><strong>Service:</strong> ${document.getElementById('service-select').value}</p>
+        <p><strong>Provider:</strong> ${selected_provider.name} (Rating: ${selected_provider.rating})</p>
+        `;
+    } catch (error) {
+        status.className = 'status-error';
+        status.textContent = "Error occurred while booking service";
+    }
+    bookBtn.disabled = false;
+
+}
 
 let allCities =[]
 let selected_provider = null;
