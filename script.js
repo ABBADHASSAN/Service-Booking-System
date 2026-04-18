@@ -75,11 +75,11 @@ function populateProviders(providers){
 
             // adding span for name and rating inside the div
             const nameSpan = document.createElement('span');
-            nameSpan.className='Provider-name' ;
+            nameSpan.className='provider-name' ;
             nameSpan.textContent = provider.name ;
 
             const rating = document.createElement('span');
-            rating.className='Provider-rating' ;
+            rating.className='provider-rating' ;
             rating.textContent = provider.rating ;
 
             option.appendChild(nameSpan);
